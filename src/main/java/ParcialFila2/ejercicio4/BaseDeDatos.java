@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BaseDeDatos {
-    private String orden;
     private IOrdenamiento ordenamiento;
-    private List<Usuario> list = new ArrayList<>();
+    private List<Usuario> listaUsuario = new ArrayList<>();
+    private String orden;
 
     public BaseDeDatos(){}
 
@@ -18,6 +18,9 @@ public class BaseDeDatos {
         this.orden = orden;
     }
 
+    public void add(Usuario usuario){
+        listaUsuario.add(usuario);
+    }
     public IOrdenamiento getOrdenamiento() {
         return ordenamiento;
     }
@@ -26,20 +29,15 @@ public class BaseDeDatos {
         this.ordenamiento = ordenamiento;
     }
 
-    public List<Usuario> getList() {
-        return list;
+    public List<Usuario> getListaUsuario() {
+        return listaUsuario;
     }
 
-    public void setList(List<Usuario> list) {
-        this.list = list;
+    public void setListaUsuario(List<Usuario> listaUsuario) {
+        this.listaUsuario = listaUsuario;
     }
 
-    public void add(Usuario usuario){
-        list.add(usuario);
+    public void execute(){
+        this.ordenamiento.execute(this.listaUsuario, orden);
     }
-
-    public void ordenar(){
-
-    }
-
 }
