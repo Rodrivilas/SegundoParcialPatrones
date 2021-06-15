@@ -34,5 +34,8 @@ public class Computadora {
         this.consumoEnCPU = consumoEnCPU;
     }
 
-
+    public void showInfo(){
+        System.out.println("Consumo en memoria RAM: "+(consumoMemoriaRam*5)+"%");
+        System.out.println("Consumo en CPU: "+(consumoEnCPU*5)+"%");
+    }
 }
